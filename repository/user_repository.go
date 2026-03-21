@@ -91,6 +91,7 @@ func (r *InMemoryUserRepository) Save(user model.User) error {
 	return nil
 }
 
+// Aida EiEi
 func (r *InMemoryUserRepository) ListUsers() ([]model.User, error) {
 	r.mu.RLock()
 	defer r.mu.RUnlock()
