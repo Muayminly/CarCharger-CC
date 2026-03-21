@@ -1,5 +1,7 @@
+// Database Mapping
 package repository
 
+// import
 import (
 	"errors"
 	"sync"
