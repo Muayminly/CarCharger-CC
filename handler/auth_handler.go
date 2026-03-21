@@ -1,3 +1,4 @@
+//Test Pull-Request
 package handler
 
 import (
@@ -16,7 +17,7 @@ type AuthHandler struct {
 func NewAuthHandler(service service.AuthService) *AuthHandler {
 	return &AuthHandler{service: service}
 }
-
+//ฟังก์ชันส่วนของการลงทะเบียนเข้าสู้ระบบ
 func (h *AuthHandler) Register(c *gin.Context) {
 	var req model.EVDriver
 	if err := c.ShouldBindJSON(&req); err != nil {
@@ -30,7 +31,7 @@ func (h *AuthHandler) Register(c *gin.Context) {
 	}
 	c.JSON(http.StatusCreated, result)
 }
-
+//ฟังก์ชันส่วนของการลอกอินเข้าสู่ระบบ
 func (h *AuthHandler) Login(c *gin.Context) {
 	var req struct {
 		EmailOrPhone string `json:"emailOrPhone"`
@@ -47,7 +48,7 @@ func (h *AuthHandler) Login(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, result)
 }
-
+//ฟังก์ชันสำหรับการออกจากระบบ
 func (h *AuthHandler) Logout(c *gin.Context) {
 	var req struct {
 		UserID string `json:"userId"`
@@ -62,7 +63,6 @@ func (h *AuthHandler) Logout(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, gin.H{"message": "logout successful"})
 }
-
 func (h *AuthHandler) UpdateProfile(c *gin.Context) {
 	var req model.User
 	if err := c.ShouldBindJSON(&req); err != nil {
@@ -75,3 +75,6 @@ func (h *AuthHandler) UpdateProfile(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, gin.H{"message": "profile updated"})
 }
+//comment Aida
+
+////8hyy
